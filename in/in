@@ -8,7 +8,6 @@ exec 1>&2 # redirect all output to stderr for logging
 
 destination=$1
 
-
 if [ -z "$destination" ]; then
   echo "usage: $0 <path/to/destination>" >&2
   exit 1
@@ -63,3 +62,4 @@ jq -n "{
 mkdir -p $1
 
 cat ${changed_filepath} > ${1}/metadata
+echo ${changed_filename} > ${1}/name
